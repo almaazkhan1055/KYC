@@ -202,31 +202,11 @@ export const navigation = [
   {
     name: "Dashboard",
     icon: FolderIcon,
-    subItems: [
-      { name: "eCommerce", pro: false },
-      { name: "Analytics", pro: true },
-      { name: "Marketing", pro: true },
-      { name: "CRM", pro: true },
-      { name: "Stocks", pro: true },
-    ],
   },
-  { name: "Calendar", icon: CalendarIcon, subItems: [] },
-  { name: "Profile", icon: ProfileIcon, subItems: [] },
-  { name: "Tasks", href: "#", icon: TaskIcon, current: false },
   {
-    name: "Forms",
-    href: "#",
-    icon: FormIcon,
-    current: false,
-    subItems: [
-      { name: "Form Elements", pro: false },
-      { name: "Pro Form ElementsPro", pro: true },
-      { name: "Form Layout", pro: false },
-      { name: "Pro Form Layout", pro: true },
-    ],
+    name: "Users",
+    icon: FolderIcon,
   },
-  { name: "Tables", href: "#", icon: TableIcon, current: false },
-  { name: "Pages", href: "#", icon: PageIcon, current: false },
 ];
 
 export const axisChartdata = [
@@ -354,4 +334,43 @@ export const priceChartdata = [
   { day: "F", sales: 20, revenue: 15 },
   { day: "S", sales: 45, revenue: 35 },
   { day: "S", sales: 0, revenue: 0 },
+];
+
+export const usersList = [
+  {
+    id: 1,
+    name: "Kalimullah khan",
+    email: "kms@makbyte.com",
+    role: "User",
+    createdAt: "07/01/2025",
+    status: ["Pending", "Resolved", "Rejected"],
+    actions: "delete",
+  },
+  {
+    id: 2,
+    name: "Ovais Sharif",
+    email: "ovais@makbyte.com",
+    role: "User",
+    createdAt: "05/01/2025",
+    status: ["Pending", "Resolved", "Rejected"],
+    actions: "delete",
+  },
+  {
+    id: 3,
+    name: "Hasib Siddiqui",
+    email: "hassu@makbyte.com",
+    role: "User",
+    createdAt: "06/01/2025",
+    status: ["Pending", "Resolved", "Rejected"],
+    actions: "delete",
+  },
+  {
+    id: 4,
+    name: "Almaaz khan",
+    email: "almaaz@makbyte.com",
+    role: "user",
+    createdAt: "05/01/2025",
+    status: ["Pending", "Resolved", "Rejected"],
+    actions: "delete",
+  },
 ];

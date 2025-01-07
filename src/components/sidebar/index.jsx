@@ -37,7 +37,7 @@ const Sidebar = ({ sidebarOpen }) => {
     <div
       className={`${
         sidebarOpen ? "block" : "hidden"
-      } xl:fixed xl:flex xl:w-72 xl:flex-col ${
+      } xl:fixed xl:flex xl:w-72 xl:flex-col h-full ${
         isDarkMode ? "bg-[#24303F]" : "bg-white"
       }`}
     >

@@ -1,9 +1,14 @@
 import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { useParams } from "react-router-dom";
 import { usersList } from "../../data/data";
+import { useTheme } from "../../context/themeContext";
+import { TiTick } from "react-icons/ti";
+import { ImCross } from "react-icons/im";
+import { FcApprove, FcDisapprove } from "react-icons/fc";
 
 export default function User() {
   const { id } = useParams();
+  const { isDarkMode } = useTheme();
   console.log(id);
 
   // useEffect(() => {
@@ -11,18 +16,29 @@ export default function User() {
   // }, []);
   return (
     <div className="p-4">
-      <div className="px-4 sm:px-0">
-        <h3 className="text-base/7 font-semibold text-gray-900">
-          Applicant Information
-        </h3>
-        <p className="mt-1 max-w-2xl text-sm/6 text-gray-500">
-          Personal details and application.
-        </p>
+      <div className="sm:px-0 flex items-center justify-between">
+        <div>
+          <h3
+            className={`text-base/7 font-semibold ${
+              isDarkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
+            Applicant Information
+          </h3>
+          <p className="mt-1 max-w-2xl text-sm/6 text-gray-500">
+            Personal details and application.
+          </p>
+        </div>
+        <img
+          src="https://placehold.co/100x100"
+          alt="applicaant-img"
+          className="rounded-full mr-20"
+        />
       </div>
       <div className="mt-6 border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Full name</dt>
+            <dt className="text-sm/6 font-medium">Full name</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
               {usersList[id - 1]?.name}
             </dd>
@@ -38,25 +54,21 @@ export default function User() {
           </div> */}
 
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">
-              Email address
-            </dt>
+            <dt className="text-sm/6 font-medium">Email address</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              margotfoster@example.com
+              {usersList[id - 1]?.email}
             </dd>
           </div>
 
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">
-              Salary expectation
-            </dt>
+            <dt className="text-sm/6 font-medium">Salary expectation</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
               $120,000
             </dd>
           </div>
 
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">About</dt>
+            <dt className="text-sm/6 font-medium">About</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
               Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
               incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
@@ -67,8 +79,8 @@ export default function User() {
           </div>
 
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Attachments</dt>
-            <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            <dt className="text-sm/6 font-medium">Attachments</dt>
+            <dd className="mt-2 text-sm sm:col-span-2 sm:mt-0">
               <ul
                 role="list"
                 className="divide-y divide-gray-100 rounded-md border border-gray-200"
@@ -118,6 +130,10 @@ export default function User() {
                   </div>
                 </li>
               </ul>
+              <div className="flex items-center justify-around my-10">
+                <FcApprove size={40} className="cursor-pointer" />
+                <FcDisapprove size={40} className="cursor-pointer" />
+              </div>
             </dd>
           </div>
         </dl>

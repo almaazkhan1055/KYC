@@ -16,7 +16,6 @@ const App = () => {
   const { isDarkMode } = useTheme();
   const location = useLocation();
 
-  // Check if the current route is either /signup or /login
   const isAuthRoute = ["/signup", "/login"].includes(location.pathname);
 
   useEffect(() => {
@@ -31,14 +30,11 @@ const App = () => {
         isDarkMode ? "bg-[#1A222C] text-white" : "bg-white text-gray-900"
       }
     >
-      {/* Render Sidebar only on non-auth routes */}
       {!isAuthRoute && <Sidebar sidebarOpen={sidebarOpen} />}
 
       <div className={!isAuthRoute ? "xl:pl-72" : ""}>
-        {/* Render Header only on non-auth routes */}
         {!isAuthRoute && <Header setSidebarOpen={setSidebarOpen} />}
 
-        {/* Define application routes */}
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />

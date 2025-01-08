@@ -16,9 +16,9 @@ const App = () => {
   const navigate = useNavigate();
   const { isDarkMode } = useTheme();
 
-  // useEffect(() => {
-  //   navigate("/createapplication");
-  // }, []);
+  useEffect(() => {
+    navigate("/dashboard");
+  }, []);
 
   return (
     <div

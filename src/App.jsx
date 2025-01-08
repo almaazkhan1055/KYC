@@ -7,6 +7,8 @@ import DashboardContent from "./components/DashboardContent";
 import ErrorPage from "./components/ErrorPage";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import CreateApplication from "./components/CreateApplication";
+import ApplicationStatus from "./components/ApplicationStatus";
 import Signup from "./components/Signup.jsx";
 import Login from "./components/Login.jsx";
 
@@ -36,12 +38,17 @@ const App = () => {
         {!isAuthRoute && <Header setSidebarOpen={setSidebarOpen} />}
 
         <Routes>
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<DashboardContent />} />
           <Route path="/users" element={<UsersList />} />
           <Route path="/users/:id" element={<User />} />
-          <Route path="*" element={<ErrorPage />} />
+
+          {/* Users Routes */}
+          <Route path="/createapplication" element={<CreateApplication />} />
+          <Route path="/applicationstatus" element={<ApplicationStatus />} />
+          {/* <Route path="*" element={<ErrorPage />} /> */}
         </Routes>
       </div>
     </div>
